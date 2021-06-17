@@ -1,6 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
+/**
+ * main - outputs string using puts
+*/
+
+
 int main(void)
 {
 puts("\"Programming is like building a multilingual puzzle");
