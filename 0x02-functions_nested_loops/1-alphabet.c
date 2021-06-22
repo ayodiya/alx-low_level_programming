@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * main - print Holberton
+ * print_alphabet - print Holberton
  *
  * Return: Always 0 (Success)
  */
@@ -15,5 +15,6 @@ void print_alphabet(void)
 		_putchar(i);
 	}
 
+	_putchar('\n');
 
 }
