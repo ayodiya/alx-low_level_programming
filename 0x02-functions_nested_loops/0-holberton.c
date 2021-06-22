@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * main - Entry point
+ * main - print Holberton
  *
  * Return: Always 0 (Success)
  */
@@ -16,7 +16,7 @@ int main(void)
 	_putchar('r');
 	_putchar('t');
 	_putchar('o');
-	-putchar('n');
+	_putchar('n');
 	_putchar('\n');
 	return (0);
 }
