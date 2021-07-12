@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * name - print name of file
+ * main - print name of file
  * @argc:  count of arguments
  * @argv: array of arguments
  * Return: 1
