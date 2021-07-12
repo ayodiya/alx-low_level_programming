@@ -10,7 +10,6 @@
  */
 int main(int argc, char *argv[])
 {
-
 	int multi = 0;
 
 	if (argc < 2)
