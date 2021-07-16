@@ -10,7 +10,7 @@
 
 void *malloc_checked(unsigned int b)
 {
-	int *allocMemo = malloc(b);
+	void *allocMemo = malloc(b);
 
 	if (!allocMemo)
 	{
