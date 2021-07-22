@@ -24,8 +24,8 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		printf("%d%s", va_arg(ap, int), i != (n - 1) ? separator : "");
 	}
 
-	putchar('\n');
-	va_end(ap);
 
+	va_end(ap);
+	putchar('\n');
 
 }
