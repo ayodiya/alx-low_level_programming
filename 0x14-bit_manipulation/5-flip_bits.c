@@ -1,31 +1,20 @@
-/**
-  * countBits - count number of bits to be flipped.
-  * @x: xor of n and m.
-  *
-  * Return: number of bits.
-  */
-unsigned int countBits(unsigned int x)
-{
-	unsigned int count;
+#include "main.h"
 
-	count = 0;
-	while (x > 0)
-	{
-		count++;
-		x &= (x - 1);
-	}
-	return (count);
-}
 /**
-  * flip_bits - returns the number of bits needed to flip.
-  * @n: number.
-  * @m: number.
-  *
-  * Description: Number of bits neded to flip to get from one number
-  * to another.
-  * Return: number of bits.
-  */
+ * flip_bits - returns hamming distance of two bit words
+ * which is the number of bits you would need to flip to get
+ * from one number to another
+ * @n: the first bit word
+ * @m: the second bit word
+ *
+ * Return: the hamming distance
+ */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	return (countBits(n ^ m));
+	int shift = (sizeof(n) * BYTE_LENGHT);
+	int dist = 0;
+
+	while (shift--)
+		dist += (n >> shift & 1) != (m >> shift & 1);
+	return (dist);
 }
