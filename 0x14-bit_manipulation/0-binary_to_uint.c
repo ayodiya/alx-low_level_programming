@@ -1,73 +1,48 @@
 #include "main.h"
-/**
-  *_strlen - returns the length of a string.
-  *@s: pointer to string.
-  *
-  *Return: length.
-  */
-unsigned int _strlen(const char *s)
-{
-	unsigned int i;
+#include <stdlib.h>
+#include <stdio.h>
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+/**
+ * _strlen - find the length of a string
+ * @s: pointer to the string to check
+ * Return: void
+*/
+
+
+int _strlen(const char *s)
+{
+int i = 0;
+while (s[i])
+	i++;
+
+return (i);
 }
 
-/**
-  *getp - returns the value of x to the power of y.
-  *@x: number.
-  *@y: power.
-  *
-  *Return: x to the pow of y.
-  *0 if x < 0.
-  */
-int getp(int x, int y)
-{
-	if (y < 0)
-		return (0);
-	if (y == 0)
-		return (1);
-	if (y == 1)
-		return (x);
-
-	return (x * getp(x, y - 1));
-}
 
 /**
-  *binary_to_uint - converts a binary number to an unsigned int.
-  *@b: pointer to string containing 0 and 1.
-  *
-  *Return: converted number or 0 if b is null or has chars not 0 or 1.
-  */
+ * binary_to_uint - converts a binary number to an unsigned int
+ * @b: binary number
+ *
+ * Return: 0 or converted number
+ */
+
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int num, length, index;
-	int power;
+	unsigned int n = 0;
+	int i, len;
 
-	if (!b)
+	if (b == NULL)
 		return (0);
 
-	length = _strlen(b);
-	power = 0;
-	num = 0;
-	index = length - 1;
-	while (length > 0)
+	len = _strlen(b);
+
+	for (i = 0; i != len; i++)
 	{
-		if (b[index] == 48 || b[index] == 49)
-		{
-			num = num + ((b[index] - 48) * getp(2, power));
-			power++;
-			index--;
-			length--;
-		}
-		else
-		{
+		if (b[len - i - 1] == '1')
+			n += 1 << i;
+		else if (b[len - i - 1] != '0')
 			return (0);
-		}
 	}
-	return (num);
+
+	return (n);
 }
